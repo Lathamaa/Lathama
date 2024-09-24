@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Latha</h1>
+        <p>think your way to success</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <h2> about me</h2>
+        <p>I AM LATHA I AM  STUDING MCA IN SBRR MAHAJANA'S FIRST GREAD COLLEGE IN MYSORE ,i want to busy myslef,and my hobbies is reading book and listening music .</p>
+    </section>
+
+    <section id="portfolio">
+        <h2>portfolio </h2>
+        <div id="projects">
+            <!-- Projects will be added here -->
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>strong work ethic</li>
+            <li>communication skill</li>
+            <li>problem-solving skill</li>
+        </ul>
+    </section>
+
+    <section id="achievements">
+        <h2>Achievements</h2>
+        <ul id="achievement-list">
+            <!-- Achievements will be listed here -->
+        </ul>
+        <form id="achievement-form">
+            <input type="text" id="achievement" placeholder="Add new achievement" required>
+            <button type="submit">Add</button>
+        </form>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: lathamm8431@gmail.com</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+style.js
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: light green;
+}
+
+section {
+    padding: 20px;
+}
+
+h2 {
+    border-bottom: 2px solid #333;
+}
+script.js
+#achievement-form {
+    margin-top: 10px;
+}
+document.getElementById('achievement-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const achievementInput = document.getElementById('achievement');
+    const newAchievement = achievementInput.value;
+    
+    if (newAchievement) {
+        const achievementList = document.getElementById('achievement-list');
+        const listItem = document.createElement('li');
+        listItem.textContent = newAchievement;
+        achievementList.appendChild(listItem);
+        
+        achievementInput.value = ''; // Clear input field
+    }
+});
